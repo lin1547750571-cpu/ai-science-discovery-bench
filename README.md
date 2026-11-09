@@ -94,7 +94,7 @@ The reviewer evaluates the submitted scientific content without external literat
 
 ## Leaderboard
 
-The following table summarizes historical score records from the project platform, with snapshot date **2026-10-29** and reviewer **Qwen3.6-27B**. **This historical leaderboard does not represent a completed evaluation of every paper in the 1,000-paper corpus.**
+The following table summarizes historical score records from the project platform, with snapshot date **2026-10-29** and reviewer **Qwen3.6-27B**.
 
 | Rank | System | Overall score ↑ | Novelty ↑ | Feasibility ↑ | Scientific value ↑ | Research risk ↓ |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: |
@@ -118,8 +118,6 @@ The following table summarizes historical score records from the project platfor
 | 18 | NOVA | 6.901 | 7.781 | 6.468 | 7.556 | 5.924 |
 | 19 | AI-Researcher · HKUDS | 6.741 | 7.114 | 6.737 | 7.142 | 5.299 |
 | 20 | SciPIP | 6.650 | 7.358 | 6.389 | 7.193 | 5.930 |
-
-Each column is an arithmetic mean, displayed to three decimal places. Small mean differences alone do not establish statistical significance.
 
 ![Historical score comparison of 20 AI research systems](assets/system-comparison.png)
 
