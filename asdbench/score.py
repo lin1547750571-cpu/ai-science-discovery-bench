@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .client import CompletionError, complete, validate_url
-from .core import MARKER, canonical, digest, response_schema, strict_json, validate_review, validate_submission
+from .core import LEGACY_MARKER, MARKER, canonical, digest, response_schema, strict_json, validate_review, validate_submission
 
 
 def read_submissions(path):
@@ -99,7 +99,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
-    parser.add_argument('--prompt', type=Path, default=Path(__file__).resolve().parents[1] / 'prompts/review_prompt_zh.txt')
+    parser.add_argument('--prompt', type=Path, default=Path(__file__).resolve().parents[1] / 'prompts/review_prompt.txt')
     parser.add_argument('--base-url', default=os.getenv('ASD_BASE_URL', ''))
     parser.add_argument('--model', default=os.getenv('ASD_MODEL', 'Qwen3.6-27B'))
     parser.add_argument('--workers', type=int, default=5)
@@ -123,9 +123,10 @@ def main(argv=None):
             args.base_url = validate_url(args.base_url)
         raw_prompt = args.prompt.read_bytes()
         text = raw_prompt.decode('utf-8-sig')
-        if text.count(MARKER) != 1 or text.split(MARKER)[1].strip():
+        marker = LEGACY_MARKER if text.rstrip().endswith(LEGACY_MARKER) else MARKER
+        if text.count(marker) != 1 or text.split(marker)[1].strip():
             raise ValueError('review prompt must end with one material placeholder')
-        instructions = text.split(MARKER)[0]
+        instructions = text.split(marker)[0]
         records = read_submissions(args.input)
         for record in records:
             if len(canonical(record['material']).encode('utf-8')) > args.max_input_bytes:

@@ -22,6 +22,6 @@ For example, [IdeaScientist's upstream LICENSE](https://github.com/jiarui-liu/Id
 
 ## Evaluation records and figures
 
-The README leaderboard summarizes existing project-platform records. Individual generated questions and scores are not bundled. The evaluator is an independent client implementation using the archived rubric's weighting, rounding, and missing-value rules. The Chinese reviewer prompt is preserved, and its SHA-256 fingerprint is recorded in the README evaluation section.
+The README leaderboard summarizes existing project-platform records. Individual generated questions and scores are not bundled. The evaluator is an independent client implementation using the archived rubric's weighting, rounding, and missing-value rules.
 
 The two PNGs in `assets/` are project figures: a historical system-score comparison and an English word cloud built from the full paper corpus. They are not figures copied from another benchmark.

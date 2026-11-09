@@ -88,9 +88,7 @@ Compute the total from **unrounded** dimension scores, then round each dimension
 
 A criterion that cannot be judged is `null`, as are its dimension and the total. Other dimensions remain valid. Missing criteria must not be replaced with zero or redistributed weights. The scorer recalculates aggregates from the 16 criteria instead of trusting model arithmetic.
 
-The original, frozen reviewer prompt is in Chinese and remains unchanged in [`prompts/review_prompt_zh.txt`](prompts/review_prompt_zh.txt) to preserve the scoring protocol. The common generation task is in English.
-
-Reviewer prompt SHA-256: `af52de54f05cbd17af558e78b485aa6691f7e3f829e9dd454078e13997d0588c`.
+[Research task](prompts/research_task.txt) · [Review prompt](prompts/review_prompt.txt)
 
 The reviewer evaluates the submitted scientific content without external literature search; it does not establish global novelty or scientific correctness.
 

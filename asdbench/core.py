@@ -13,7 +13,8 @@ WEIGHTS = (
     ('0.35', '0.25', '0.25', '0.15'),
 )
 SCIENCE_FIELDS = {'proposal', 'Title', 'Motivation', 'Experiment', 'claim', 'plan', 'alternatives', 'evidence'}
-MARKER = '{{在这里粘贴科研问题、部分研究方案或完整问题包}}'
+MARKER = '{{RESEARCH_QUESTION}}'
+LEGACY_MARKER = '{{在这里粘贴科研问题、部分研究方案或完整问题包}}'
 
 
 def canonical(value):
