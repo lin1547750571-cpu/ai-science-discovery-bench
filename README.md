@@ -127,7 +127,7 @@ Each column is an arithmetic mean, displayed to three decimal places. Small mean
 
 The bars show dimension means; the red line shows the weighted overall score. Risk is displayed as `10 - Risk`, so higher plotted values are better. The horizontal axis starts at 3.5 to reveal mean differences; bar-length ratios should not be interpreted as capability ratios.
 
-These results concern research-question generation. A system's full training procedure, experimentation pipeline, retrieval resources, or iteration budget may differ from the evaluated adaptation. The [evaluation adaptation notes](#evaluation-adaptations) describe these differences.
+These results concern research-question generation. A system's full training procedure, experimentation pipeline, retrieval resources, or iteration budget may differ from the evaluated adaptation.
 
 ## Evaluation Instructions
 
@@ -240,49 +240,7 @@ The two similarly named AI-Researcher systems are distinguished as **HKUDS** and
 | AI-Researcher · HKUDS | University of Hong Kong; HKUDS / Chao Huang group | [AI-Researcher: Autonomous Scientific Innovation](https://arxiv.org/abs/2505.18705) | [Code](https://github.com/HKUDS/AI-Researcher) |
 | SciPIP | Zhejiang University; Alibaba Cloud; Zhejiang University of Technology | [SciPIP: An LLM-based Scientific Paper Idea Proposer](https://arxiv.org/abs/2410.23166) | [Code](https://github.com/cheerss/SciPIP) |
 
-Affiliations describe the original authorship and do not imply participation in or endorsement of this benchmark. The linked papers describe the original systems; the notes below describe the evaluated variants.
-
-### Evaluation adaptations
-
-<details>
-<summary>Evaluated procedures and scope for the 20 systems</summary>
-
-These notes describe the evaluated adaptations, not the complete capabilities of the original systems. Final question selection occurs before this benchmark's independent reviewer scores the submission.
-
-| System | Evaluated procedure and scope |
-| --- | --- |
-| AI Scientist · Sakana | Two initial candidates, followed by iterative self-reflection. The final question is selected using the native internal ratings. |
-| ResearchAgent | Question, method, and experiment-design stages each run three generation-and-review rounds, with five review criteria. Selection follows the native internal feedback. |
-| IdeaScientist | The native orchestrator schedules gap discovery, ideation, adversarial review, revision, and report writing. A shared Qwen base model is used instead of specialized trained weights; the preference for methodological contributions is retained. |
-| SciAgents | A fixed role sequence performs evidence-graph and path reasoning, expansion along seven aspects, criticism, and consolidation into one question. |
-| SciMON | Five papers are retrieved for initial generation. Similarity is checked against the fixed corpus using the original 0.6 threshold; at most two novelty revisions are made, and the last version is retained. |
-| InfAL | An initial idea is bridged into the generator, optimizer, and discriminator loop. The novelty configuration allows at most ten rounds, stops after two consecutive rounds without clear improvement, and keeps the last revision. |
-| IDEAgent | Three seeds undergo feature extraction, quality and diversity checks, and five independent logical checks per draft. Each seed has at most two repair or refinement steps; the third route is selected by a fixed rule. |
-| IRIS | Initial generation and review are followed by five tree-search iterations with maximum depth three. The run is autonomous and retains native node selection and backpropagation. |
-| AI-Researcher · Stanford | Literature retrieval and relevance checks precede five idea seeds, similarity deduplication, and five rounds of pairwise ranking. Only the top-ranked idea is expanded. |
-| EvoScientist | Native planning, tools, role scheduling, and session memory produce a final proposal in an isolated workspace per paper. Long-term self-evolution and experiment execution are outside the comparison. |
-| CoI-Agent | One development chain of up to five papers supports trend analysis, question construction, similarity checks, and experimental-plan improvement. Similarity feedback is limited to three attempts; the native revised text is retained. |
-| DeepScientist | The native research task, ideation skill, and memory tools form and submit a research question. Only the proposal stage is evaluated. |
-| CycleResearcher | Five candidates pass through generation, DeepReviewer assessment, and feedback-based revision before selection of the final version. |
-| MOOSE | Inspiration selection is followed by reality, novelty, and clarity feedback, revision, and one inspiration-replacement cycle. The final revision is used. |
-| AutoResearchClaw | The adaptation retains problem decomposition, evidence extraction, synthesis, hypothesis generation from three perspectives, and validation-plan design. |
-| DiscoveryRSI | The native research loop evaluates the candidates actually generated and selects a final question. Recursive training is not performed. |
-| Dr-Claw | Research-ideation and evaluation skills produce candidates that undergo evaluation and convergence. The full workspace interaction experience is outside the comparison. |
-| NOVA | Three seed types produce three reasoning routes, each with three retrieval-and-improvement rounds. A predetermined random selection rule chooses one route for final expansion. |
-| AI-Researcher · HKUDS | The official ideation-agent loop develops a proposal from one paper's structured scientific information. Algorithm implementation and paper publication are not performed. |
-| SciPIP | Semantic and entity retrieval, native clustering filters, two inspiration paths, and integration are retained. The first integrated item is chosen in advance and is the only item expanded. |
-
-</details>
-
-
-## Reproducibility
-
-Fix paper versions, scientific inputs, generation budgets, final-question selection rules, and reviewer settings before comparing systems. New services or changed protocols should be reported separately from the historical leaderboard.
-
-This release publishes the corpus index and evaluator. It does not include the historical structured inputs, generated questions, individual scores, or full system adapters required to reconstruct every historical result. The evaluator can be reused to score new submissions; it does not run the 20 original systems automatically.
-
-For corrections or contributions, include a minimal synthetic example, keep credentials out of reports, and state any changes to inputs, model settings, or the evaluation protocol.
-
+Affiliations describe the original authorship and do not imply participation in or endorsement of this benchmark.
 
 ## License and notices
 

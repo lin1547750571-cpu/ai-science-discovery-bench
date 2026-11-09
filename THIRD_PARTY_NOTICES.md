@@ -16,7 +16,7 @@ If full texts are distributed in a future release, their exact versions, license
 
 ## Research systems
 
-The 20 original papers, affiliations, and official repositories are listed in the [README](README.md#system-sources), with the evaluated procedures and scope recorded in its [adaptation notes](README.md#evaluation-adaptations). These are source attributions, not claims of endorsement. No third-party system source code, weights, or datasets are bundled; their original terms continue to apply.
+The 20 original papers, affiliations, and official repositories are listed in the [README](README.md#system-sources). These are source attributions, not claims of endorsement. No third-party system source code, weights, or datasets are bundled; their original terms continue to apply.
 
 For example, [IdeaScientist's upstream LICENSE](https://github.com/jiarui-liu/IdeaScientist/blob/main/LICENSE) is CC BY-NC 4.0 and includes a noncommercial restriction. This benchmark cites that system without redistributing or relicensing its implementation.
 
